@@ -46,13 +46,10 @@ public class MainView extends JFrame {
         btnEnvio.setToolTipText("Cadastrar um novo envio e gerar código");
         btnConsulta.setToolTipText("Consultar todos os envios cadastrados");
 
-        // Cores diferentes
-        Color[] cores = {
-            new Color(66, 133, 244), // azul
-            new Color(52, 168, 83), // verde
-            new Color(251, 188, 5), // amarelo
-            new Color(234, 67, 53) // vermelho
-        };
+        // Cores Fedex: roxo e laranja
+        Color roxo = new Color(87, 41, 142);
+        Color laranja = new Color(255, 102, 0);
+        Color[] cores = {roxo, laranja, roxo, laranja};
         JButton[] buttons = {btnRemetente, btnDestinatario, btnEnvio, btnConsulta};
         for (int i = 0; i < buttons.length; i++) {
             JButton btn = buttons[i];

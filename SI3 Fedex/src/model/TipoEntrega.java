@@ -1,3 +1,4 @@
+package model;
 
 public enum TipoEntrega {
     NORMAL(1),
