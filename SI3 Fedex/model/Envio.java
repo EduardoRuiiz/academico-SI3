@@ -1,4 +1,92 @@
 
+import java.math.BigDecimal;
+import java.sql.Date;
+
 public class Envio {
+
+    private int id;
+    private Destinatario destinatario;
+    private Remetente remetente;
+    private TipoEntrega tipoEntrega;
+    private BigDecimal peso;
+    private Date dataEnvio;
+    private String codigoRastreamento;
+    private String status;
+
+    public Envio(int id, Destinatario destinatario, Remetente remetente, TipoEntrega tipoEntrega, BigDecimal peso,
+            Date dataEnvio, String codigoRastreamento, String status) {
+        this.id = id;
+        this.destinatario = destinatario;
+        this.remetente = remetente;
+        this.tipoEntrega = tipoEntrega;
+        this.peso = peso;
+        this.dataEnvio = dataEnvio;
+        this.codigoRastreamento = codigoRastreamento;
+        this.status = status;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Destinatario getDestinatario() {
+        return destinatario;
+    }
+
+    public void setDestinatario(Destinatario destinatario) {
+        this.destinatario = destinatario;
+    }
+
+    public Remetente getRemetente() {
+        return remetente;
+    }
+
+    public void setRemetente(Remetente remetente) {
+        this.remetente = remetente;
+    }
+
+    public TipoEntrega getTipoEntrega() {
+        return tipoEntrega;
+    }
+
+    public void setTipoEntrega(TipoEntrega tipoEntrega) {
+        this.tipoEntrega = tipoEntrega;
+    }
+
+    public BigDecimal getPeso() {
+        return peso;
+    }
+
+    public void setPeso(BigDecimal peso) {
+        this.peso = peso;
+    }
+
+    public Date getDataEnvio() {
+        return dataEnvio;
+    }
+
+    public void setDataEnvio(Date dataEnvio) {
+        this.dataEnvio = dataEnvio;
+    }
+
+    public String getCodigoRastreamento() {
+        return codigoRastreamento;
+    }
+
+    public void setCodigoRastreamento(String codigoRastreamento) {
+        this.codigoRastreamento = codigoRastreamento;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
 }
