@@ -15,7 +15,6 @@ public class MainView extends JFrame {
         mainPanel.setLayout(new BorderLayout());
         mainPanel.setBackground(new Color(245, 245, 245));
 
-        // Logo real redimensionado
         ImageIcon logoIcon = new ImageIcon(getClass().getResource("/img/Fedex-logo.png"));
         Image img = logoIcon.getImage();
         Image scaledImg = img.getScaledInstance(-1, 120, Image.SCALE_SMOOTH); // altura máxima 120px
@@ -40,13 +39,11 @@ public class MainView extends JFrame {
         JButton btnEnvio = new JButton("Cadastro de Envio");
         JButton btnConsulta = new JButton("Consulta de Envios");
 
-        // Tooltips
         btnRemetente.setToolTipText("Cadastrar um novo remetente");
         btnDestinatario.setToolTipText("Cadastrar um novo destinatário");
         btnEnvio.setToolTipText("Cadastrar um novo envio e gerar código");
         btnConsulta.setToolTipText("Consultar todos os envios cadastrados");
 
-        // Cores Fedex: roxo e laranja
         Color roxo = new Color(87, 41, 142);
         Color laranja = new Color(255, 102, 0);
         Color[] cores = {roxo, laranja, roxo, laranja};
@@ -75,7 +72,7 @@ public class MainView extends JFrame {
                 }
             });
             centerPanel.add(btn);
-            centerPanel.add(Box.createRigidArea(new Dimension(0, 18)));
+            centerPanel.add(Box.createRigidArea(new Dimension(0, 15)));
         }
 
         btnRemetente.addActionListener(e -> new RemetenteFormView().setVisible(true));
@@ -83,7 +80,6 @@ public class MainView extends JFrame {
         btnEnvio.addActionListener(e -> new EnvioFormView().setVisible(true));
         btnConsulta.addActionListener(e -> new ConsultaEnviosView().setVisible(true));
 
-        // Centralizar verticalmente
         JPanel verticalCenter = new JPanel();
         verticalCenter.setLayout(new BoxLayout(verticalCenter, BoxLayout.Y_AXIS));
         verticalCenter.setOpaque(false);
@@ -92,7 +88,6 @@ public class MainView extends JFrame {
         verticalCenter.add(Box.createVerticalGlue());
         mainPanel.add(verticalCenter, BorderLayout.CENTER);
 
-        // Rodapé
         JLabel rodape = new JLabel("Fedex © 2025", SwingConstants.CENTER);
         rodape.setFont(new Font("Arial", Font.PLAIN, 12));
         rodape.setForeground(new Color(120, 120, 120));
