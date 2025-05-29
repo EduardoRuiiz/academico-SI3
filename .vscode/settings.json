@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        "SI3 Fedex/src"
+    ],
+    "java.project.referencedLibraries": [
+        "SI3 Fedex/lib/**/*.jar"
+    ]
+}

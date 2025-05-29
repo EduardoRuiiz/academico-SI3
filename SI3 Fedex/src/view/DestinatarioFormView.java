@@ -40,7 +40,7 @@ public class DestinatarioFormView extends JFrame {
             String telefone = txtTelefone.getText();
             String cpf = txtCpf.getText();
             DestinatarioController controller = new DestinatarioController();
-            boolean sucesso = controller.cadastrar(nome, endereco, telefone, cpf);
+            boolean sucesso = controller.cadastrar(nome, cpf, endereco, telefone);
             if (sucesso) {
                 JOptionPane.showMessageDialog(this, "Destinatário cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
             } else {

@@ -4,14 +4,14 @@ public class Remetente {
 
     private int id;
     private String nome;
-    private String cpf;
+    private String cnpj;
     private String endereco;
     private String telefone;
 
-    public Remetente(int id, String nome, String cpf, String endereco, String telefone) {
+    public Remetente(int id, String nome, String cnpj, String endereco, String telefone) {
         this.id = id;
         this.nome = nome;
-        this.cpf = cpf;
+        this.cnpj = cnpj;
         this.endereco = endereco;
         this.telefone = telefone;
     }
@@ -32,12 +32,12 @@ public class Remetente {
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCpf(String cnpj) {
+        this.cnpj = cnpj;
     }
 
     public String getEndereco() {

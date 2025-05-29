@@ -19,8 +19,8 @@ public class RemetenteFormView extends JFrame {
         JTextField txtEndereco = new JTextField();
         JLabel lblTelefone = new JLabel("Telefone:");
         JTextField txtTelefone = new JTextField();
-        JLabel lblCpf = new JLabel("CPF:");
-        JTextField txtCpf = new JTextField();
+        JLabel lblCnpj = new JLabel("CNPJ:");
+        JTextField txtCnpj = new JTextField();
         JButton btnSalvar = new JButton("Salvar");
 
         panel.add(lblNome);
@@ -29,8 +29,8 @@ public class RemetenteFormView extends JFrame {
         panel.add(txtEndereco);
         panel.add(lblTelefone);
         panel.add(txtTelefone);
-        panel.add(lblCpf);
-        panel.add(txtCpf);
+        panel.add(lblCnpj);
+        panel.add(txtCnpj);
         panel.add(new JLabel()); // espaço vazio
         panel.add(btnSalvar);
         add(panel);
@@ -39,9 +39,9 @@ public class RemetenteFormView extends JFrame {
             String nome = txtNome.getText();
             String endereco = txtEndereco.getText();
             String telefone = txtTelefone.getText();
-            String cpf = txtCpf.getText();
+            String cnpj = txtCnpj.getText();
             RemetenteController controller = new RemetenteController();
-            boolean sucesso = controller.cadastrar(nome, endereco, telefone, cpf);
+            boolean sucesso = controller.cadastrar(nome, endereco, telefone, cnpj);
             if (sucesso) {
                 JOptionPane.showMessageDialog(this, "Remetente cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
