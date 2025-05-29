@@ -41,7 +41,7 @@ public class RemetenteFormView extends JFrame {
             String telefone = txtTelefone.getText();
             String cnpj = txtCnpj.getText();
             RemetenteController controller = new RemetenteController();
-            boolean sucesso = controller.cadastrar(nome, endereco, telefone, cnpj);
+            boolean sucesso = controller.cadastrar(nome, cnpj, endereco, telefone);
             if (sucesso) {
                 JOptionPane.showMessageDialog(this, "Remetente cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
