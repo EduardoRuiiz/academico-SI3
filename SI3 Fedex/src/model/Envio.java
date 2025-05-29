@@ -11,18 +11,17 @@ public class Envio {
     private TipoEntrega tipoEntrega;
     private BigDecimal peso;
     private Date dataEnvio;
-    private String codigoRastreamento;
+    private String codigoRastreamento = gerarCodigoRastreamento();
     private String status;
 
     public Envio(int id, Destinatario destinatario, Remetente remetente, TipoEntrega tipoEntrega, BigDecimal peso,
-            Date dataEnvio, String codigoRastreamento, String status) {
+            Date dataEnvio, String status) {
         this.id = id;
         this.destinatario = destinatario;
         this.remetente = remetente;
         this.tipoEntrega = tipoEntrega;
         this.peso = peso;
         this.dataEnvio = dataEnvio;
-        this.codigoRastreamento = codigoRastreamento;
         this.status = status;
     }
 
@@ -88,6 +87,13 @@ public class Envio {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    private static String gerarCodigoRastreamento() {
+        String prefixo = "FDX";
+        String data = java.time.LocalDate.now().toString().replace("-", "");
+        int numero = (int) (Math.random() * 1000);
+        return prefixo + data + String.format("-%04d", numero);
     }
 
 }
