@@ -17,9 +17,9 @@ public class EnvioFormView extends JFrame {
         panel.add(new JLabel("Destinatário:"));
         panel.add(new JTextField());
         panel.add(new JLabel("Tipo de Entrega:"));
-        panel.add(new JTextField());
-        panel.add(new JLabel("Código de Envio:"));
-        panel.add(new JTextField("FDX20250601-0001"));
+        String[] tiposEntrega = {"Aéreo", "Rodoviário"};
+        JComboBox<String> comboTipoEntrega = new JComboBox<>(tiposEntrega);
+        panel.add(comboTipoEntrega);
         JButton btnSalvar = new JButton("Salvar");
         panel.add(btnSalvar);
         add(panel);
