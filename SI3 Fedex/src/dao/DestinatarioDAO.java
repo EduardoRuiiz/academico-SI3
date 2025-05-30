@@ -26,7 +26,7 @@ public class DestinatarioDAO {
         }
     }
 
-    public List<Destinatario> listarTodos() {
+    public List<Destinatario> listarDestinatarios() {
         List<Destinatario> lista = new ArrayList<>();
         String sql = "SELECT * FROM destinatario";
         try (Connection conn = Conexao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql); ResultSet rs = stmt.executeQuery()) {

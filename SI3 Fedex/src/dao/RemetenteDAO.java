@@ -3,7 +3,10 @@ package dao;
 import config.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import model.Remetente;
 
 public class RemetenteDAO {
@@ -21,5 +24,25 @@ public class RemetenteDAO {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public List<Remetente> listarRemetentes() {
+        List<Remetente> lista = new ArrayList();
+        String sql = "SELECT * FROM remetente";
+        try (Connection conn = Conexao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql); ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                Remetente r = new Remetente(
+                        rs.getInt("id"),
+                        rs.getString("nome"),
+                        rs.getString("cnpj"),
+                        rs.getString("endereco"),
+                        rs.getString("telefone")
+                );
+                lista.add(r);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return lista;
     }
 }
