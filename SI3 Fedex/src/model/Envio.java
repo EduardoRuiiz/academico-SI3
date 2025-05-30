@@ -14,6 +14,16 @@ public class Envio {
     private String codigoRastreamento = gerarCodigoRastreamento();
     private String status;
 
+    public Envio(String codigoRastreamento, Destinatario destinatario, Remetente remetente, TipoEntrega tipoEntrega, BigDecimal peso, Date dataEnvio, String status) {
+        this.codigoRastreamento = codigoRastreamento;
+        this.destinatario = destinatario;
+        this.remetente = remetente;
+        this.tipoEntrega = tipoEntrega;
+        this.peso = peso;
+        this.dataEnvio = dataEnvio;
+        this.status = status;
+    }
+
     public Envio(int id, Destinatario destinatario, Remetente remetente, TipoEntrega tipoEntrega, BigDecimal peso,
             Date dataEnvio, String status) {
         this.id = id;

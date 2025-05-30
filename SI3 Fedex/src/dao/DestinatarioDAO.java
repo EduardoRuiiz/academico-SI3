@@ -12,7 +12,7 @@ import model.Destinatario;
 public class DestinatarioDAO {
 
     public boolean inserir(Destinatario destinatario) {
-        String sql = "INSERT INTO destinatario( nome, cpf, endereco, telefone) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO destinatario (nome, cpf, endereco, telefone) VALUES (?,?,?,?)";
         try (Connection conn = Conexao.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, destinatario.getNome());
             stmt.setString(2, destinatario.getCpf());

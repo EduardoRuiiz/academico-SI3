@@ -56,4 +56,9 @@ public class Remetente {
         this.telefone = telefone;
     }
 
+    @Override
+    public String toString() {
+        return nome + "-" + cnpj;
+    }
+
 }

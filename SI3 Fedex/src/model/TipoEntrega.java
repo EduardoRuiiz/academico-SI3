@@ -1,8 +1,8 @@
 package model;
 
 public enum TipoEntrega {
-    NORMAL(1),
-    EXPRESSA(2);
+    AEREO(1),
+    RODOVIARIO(2);
 
     private final int codigo;
 
