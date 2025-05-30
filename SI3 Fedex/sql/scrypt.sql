@@ -23,11 +23,11 @@ CREATE TABLE ENVIO(
     remetente_id int,
     destinatario_id int,
     endereco_entrega TEXT,
-    tipo_entrega ENUM('Aéreo', 'Rodoviário') NOT NULL,
-    peso DECIMAL(10,2) NOT NULL,
-    data_envio DATE NOT NULL,
-    codigo_rastreamento VARCHAR(30) NOT NULL,
-    status_atual VARCHAR(30) NOT NULL,
+    tipo_entrega ENUM('Aéreo', 'Rodoviário'),
+    peso DECIMAL(10,2),
+    data_envio DATE,
+    codigo_rastreamento VARCHAR(30),
+    status_atual VARCHAR(30),
     FOREIGN KEY (remetente_id) REFERENCES remetente(id),
     FOREIGN KEY (destinatario_id) REFERENCES destinatario(id)
 );
