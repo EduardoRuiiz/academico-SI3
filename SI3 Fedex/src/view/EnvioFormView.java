@@ -87,6 +87,20 @@ public class EnvioFormView extends JFrame {
                 } else {
                     JOptionPane.showMessageDialog(this, "Erro ao salvar envio.");
                 }
+                if (controller.salvarEnvio(envio)) {
+                    JOptionPane.showMessageDialog(this, "Envio cadastrado com sucesso!");
+
+                    EtiquetaView etiqueta = new EtiquetaView(
+                            envio.getCodigoRastreamento(),
+                            envio.getRemetente().getNome(),
+                            envio.getDestinatario().getNome(),
+                            envio.getTipoEntrega().toString()
+                    );
+                    etiqueta.setVisible(true);
+
+                } else {
+                    JOptionPane.showMessageDialog(this, "Erro ao cadastrar o envio!");
+                }
 
             } catch (DateTimeParseException dtpe) {
                 JOptionPane.showMessageDialog(this, "Data inválida. Use o formato DD-MM-AAAA.");
