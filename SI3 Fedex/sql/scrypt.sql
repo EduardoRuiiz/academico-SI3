@@ -23,7 +23,7 @@ CREATE TABLE ENVIO(
     remetente_id int,
     destinatario_id int,
     endereco_entrega TEXT,
-    tipo_entrega ENUM('Aéreo', 'Rodoviário'),
+    tipo_entrega ENUM('AEREO', 'RODOVIARIO'),
     peso DECIMAL(10,2),
     data_envio DATE,
     codigo_rastreamento VARCHAR(30),
