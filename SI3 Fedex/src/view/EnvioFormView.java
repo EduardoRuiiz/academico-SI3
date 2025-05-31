@@ -45,8 +45,7 @@ public class EnvioFormView extends JFrame {
         JLabel lblDestinatario = new JLabel("Destinatário:");
         JComboBox<Destinatario> comboDestinatario = new JComboBox<>(destinatarios.toArray(new Destinatario[0]));
         JLabel lblEntrega = new JLabel("Tipo de Entrega:");
-        String[] tiposEntrega = {"Aéreo", "Rodoviário"};
-        JComboBox<String> comboTipoEntrega = new JComboBox<>(tiposEntrega);
+        JComboBox<TipoEntrega> comboTipoEntrega = new JComboBox<>(TipoEntrega.values());
         JLabel lblPeso = new JLabel("Peso (kg):");
         JTextField txtPeso = new JTextField();
         JLabel lblDataEnvio = new JLabel("Data de Envio (DD-MM-AAAA):");
@@ -75,13 +74,8 @@ public class EnvioFormView extends JFrame {
             Remetente remetente = (Remetente) comboRemetente.getSelectedItem();
             // Pega o destinatário selecionado no combo
             Destinatario destinatario = (Destinatario) comboDestinatario.getSelectedItem();
-            // Pega o tipo de entrega selecionado (String)
-            String tipoEntregaSelecionado = (String) comboTipoEntrega.getSelectedItem();
-
-            // Converte o tipo de entrega String para o enum TipoEntrega correspondente
-            TipoEntrega tipoEntrega = tipoEntregaSelecionado.equals("Aéreo")
-                    ? TipoEntrega.AEREO
-                    : TipoEntrega.RODOVIARIO;
+            // Pega o tipo de entrega selecionado
+            TipoEntrega tipoEntrega = (TipoEntrega) comboTipoEntrega.getSelectedItem();
 
             try {
                 // Tenta converter o texto do peso para BigDecimal

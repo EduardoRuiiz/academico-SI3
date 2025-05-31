@@ -26,7 +26,7 @@ public class EnvioDAO {
             // Preenche os parâmetros do SQL com os dados do objeto Envio
             stmt.setInt(1, envio.getRemetente().getId());
             stmt.setInt(2, envio.getDestinatario().getId());
-            stmt.setString(3, envio.getTipoEntrega().toString());
+            stmt.setInt(3, envio.getTipoEntrega().getCodigo());
             stmt.setBigDecimal(4, envio.getPeso());
             stmt.setDate(5, envio.getDataEnvio());
             stmt.setString(6, envio.getCodigoRastreamento());
@@ -82,9 +82,7 @@ public class EnvioDAO {
                 );
 
                 // Converte a string do tipo de entrega para o enum correspondente
-                TipoEntrega tipoEntrega = rs.getString("tipo_entrega").equalsIgnoreCase("AEREO")
-                        ? TipoEntrega.AEREO
-                        : TipoEntrega.RODOVIARIO;
+                TipoEntrega tipoEntrega = TipoEntrega.fromDescricao(rs.getString("tipo_entrega"));
 
                 // Cria o objeto Envio com todos os dados lidos
                 Envio envio = new Envio(
