@@ -1,13 +1,16 @@
 package model;
 
+//Classe que vai ser uma tabela no banco de dados
 public class Destinatario {
 
+    //Variaveis privadas que vão servir como colunas no banco de dados
     private int id;
     private String nome;
     private String cpf;
     private String endereco;
     private String telefone;
 
+    //Método construtor para futuras instancias
     public Destinatario(int id, String nome, String cpf, String endereco, String telefone) {
         this.id = id;
         this.nome = nome;
@@ -16,6 +19,7 @@ public class Destinatario {
         this.telefone = telefone;
     }
 
+    //Getters e Setters
     public int getId() {
         return id;
     }
@@ -56,6 +60,7 @@ public class Destinatario {
         this.telefone = telefone;
     }
 
+    //Método para visualização na criação
     @Override
     public String toString() {
         return nome + " - " + cpf;

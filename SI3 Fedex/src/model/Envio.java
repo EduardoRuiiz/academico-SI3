@@ -3,8 +3,10 @@ package model;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+//Classe que vai ser uma tabela no banco de dados
 public class Envio {
 
+    //Variaveis privadas que vão servir como colunas no banco de dados
     private int id;
     private Destinatario destinatario;
     private Remetente remetente;
@@ -14,6 +16,7 @@ public class Envio {
     private String codigoRastreamento = gerarCodigoRastreamento();
     private String status;
 
+    //Método construtor para futuras instancias
     public Envio(String codigoRastreamento, Destinatario destinatario, Remetente remetente, TipoEntrega tipoEntrega, BigDecimal peso, Date dataEnvio, String status) {
         this.codigoRastreamento = codigoRastreamento;
         this.destinatario = destinatario;
@@ -24,6 +27,7 @@ public class Envio {
         this.status = status;
     }
 
+    //Método construtor para futuras instancias
     public Envio(int id, Destinatario destinatario, Remetente remetente, TipoEntrega tipoEntrega, BigDecimal peso,
             Date dataEnvio, String status) {
         this.id = id;
@@ -35,6 +39,7 @@ public class Envio {
         this.status = status;
     }
 
+    //Getters e Setters
     public int getId() {
         return id;
     }
@@ -99,6 +104,7 @@ public class Envio {
         this.status = status;
     }
 
+    //Método que retorna um código aleatório com alguns padrões
     private static String gerarCodigoRastreamento() {
         String prefixo = "FDX";
         String data = java.time.LocalDate.now().toString().replace("-", "");
